@@ -35,8 +35,10 @@ var queryURL = "https://api-v3.igdb.com/games/"
 
 
 $.ajax({
-        url: queryURL,
-        method: "GET"
+        url: "https://api-v3.igdb.com/games/",
+        method: "GET",
+	user_key: "aa3e0b6b7fcfadd761e44c68eee3e3e0"
+	
       })
 
       .then(function(response) {
