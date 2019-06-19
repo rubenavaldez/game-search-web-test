@@ -43,6 +43,7 @@ $("body").on("click", "#search", function () {
 });
 
 $.ajax({
+  url: "https://rubenavaldez.github.io/game-search-web-test/",
   type: "POST",
   beforeSend: function(request) {
     request.setRequestHeader('Access-Control-Allow-Origin', '*');
