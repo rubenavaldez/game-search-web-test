@@ -2,20 +2,8 @@ var  xmlhttp = new XMLHttpRequest();
     var url = "https://www.igdb.com/oauth/authorize";
     xmlhttp.open('GET',url,true);
     xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xmlhttp.setRequestHeader("user-key", "aa3e0b6b7fcfadd761e44c68eee3e3e0");    
     
-    xmlhttp.onreadystatechange = function() {
-            alert("OnReadystatechange + " + xmlhttp.readyState + " " + xmlhttp.status);
-           if (xmlhttp.readyState == 4) {
-              if ( xmlhttp.status == 200) {
-
-                   }
-                   else {
-
-                   }
-             }
-             else
-                   alert("Error ->" + xmlhttp.responseText);
-          }
 
 
 
