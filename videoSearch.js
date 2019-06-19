@@ -45,6 +45,6 @@ $("body").on("click", "#search", function () {
 $.ajax({
   type: "POST",
   beforeSend: function(request) {
-    request.setRequestHeader('Access-Control-Allow-Origin', 'https://www.igdb.com/oauth/authorize');
+    request.setRequestHeader('Access-Control-Allow-Origin', '*');
   }
 });
