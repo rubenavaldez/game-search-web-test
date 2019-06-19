@@ -37,9 +37,9 @@ var userChoice = "games"
 $("body").on("click", "#search", function () {
   console.log("Click")
 
-  axios.get("https://api-v3.igdb.com/games/", {
+  axios.get("https://api-endpoint.igdb.com/games/1942?fields=*", {
     headers: {
-      'Access-Control-Allow-Origin': 'https://www.igdb.com/oauth/authorize',
+      'Access-Control-Allow-Origin': '*',
       "user-key": "aa3e0b6b7fcfadd761e44c68eee3e3e0",
       
       Accept: "application/json"
