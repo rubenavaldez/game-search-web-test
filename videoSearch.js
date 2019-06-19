@@ -1,10 +1,3 @@
- $.get('header.html',function(response){ 
-    $('#header').html(response); 
-	console.log(response)
-   });
-
-
-    
 $(document).ready(function () {
   console.log("ready!");
 
@@ -24,34 +17,34 @@ $(document).ready(function () {
 
 });
 
+var userChoice = "games"
+
 
 $("body").on("click", "#search", function () {
- 
-console.log("Click")
+  console.log("Click")
 
-var queryURL = "https://api-v3.igdb.com/games/"
-
-
-
-
-$.ajax({
-        url: "https://api-v3.igdb.com/games/",
-        method: "GET",
-	user_key: "aa3e0b6b7fcfadd761e44c68eee3e3e0"
-	
-      })
-
-      .then(function(response) {
-
- console.log(response)
-
-});
+  axios.get("https://api-v3.igdb.com/games/", {
+    headers: {
+      'Access-Control-Allow-Origin': 'https://www.igdb.com/oauth/authorize',
+      "user-key": "aa3e0b6b7fcfadd761e44c68eee3e3e0",
+      
+      Accept: "application/json"
+      
+    }
+  })
+    .then(response => {
+      // Do work here
+      console.log(response.data);
+    })
+    .catch(e => {
+      console.log("error", e);
+    });
 
 });
 
 $.ajax({
   type: "POST",
   beforeSend: function(request) {
-    request.setRequestHeader("Access-Control-Allow-Origin", "https://www.igdb.com/oauth/authorize")
+    request.setRequestHeader('Access-Control-Allow-Origin', 'https://www.igdb.com/oauth/authorize');
   }
 });
