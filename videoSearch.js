@@ -43,9 +43,19 @@ $("body").on("click", "#search", function () {
 });
 
 $.ajax({
-  url: "https://rubenavaldez.github.io/game-search-web-test/",
-  type: "POST",
-  beforeSend: function(request) {
-    request.setRequestHeader('Access-Control-Allow-Origin', '*');
-  }
-});
+    url: 'https://api-v3.igdb.com/',
+    headers: {
+        
+        'Access-Control-Allow-Origin':'*',
+        "user-key": "aa3e0b6b7fcfadd761e44c68eee3e3e0",    
+        'Content-Type':'application/json'
+    },
+    method: 'POST',
+    dataType: 'json',
+    
+    success: function(data){
+      console.log('succes: '+data);
+    }
+  });
+
+
