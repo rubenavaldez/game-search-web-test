@@ -5,8 +5,12 @@ var  xmlhttp = new XMLHttpRequest();
     xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xmlhttp.setRequestHeader("user-key", "aa3e0b6b7fcfadd761e44c68eee3e3e0");    
 
+xmlhttp.onload = function () {
+    console.log("success")
+  // Request finished. Do processing here.
+};
 
-
+xmlhttp.send(null);
 
 
 
@@ -37,11 +41,14 @@ var userChoice = "games"
 
 $("body").on("click", "#search", function () {
   console.log("Clicked")
+    
      xmlhttp.open('GET',url,true);
     
     xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xmlhttp.setRequestHeader("user-key", "aa3e0b6b7fcfadd761e44c68eee3e3e0");    
     console.log(xmlhttp)
+    xmlhttp.send();
+
 
   axios.get("https://api-endpoint.igdb.com/games/1942?fields=*", {
     headers: {
