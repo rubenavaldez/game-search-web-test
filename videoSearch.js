@@ -1,5 +1,5 @@
 var  xmlhttp = new XMLHttpRequest();
-    var url = "https://api-endpoint.igdb.com/headers/";
+    var url = "https://api-endpoint.igdb.com/games/1942?fields=*";
     xmlhttp.open('GET',url,true);
     
     xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
