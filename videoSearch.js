@@ -1,5 +1,5 @@
 var  xmlhttp = new XMLHttpRequest();
-    var url = "https://api-endpoint.igdb.com/games/1942?fields=*";
+    var url = "https://www.igdb.com/oauth/authorize";
    
 
     xmlhttp.open('GET',url,true);
