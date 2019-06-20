@@ -1,9 +1,9 @@
 var  xmlhttp = new XMLHttpRequest();
     var url = "https://api-endpoint.igdb.com/games/1942?fields=*";
-xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-    xmlhttp.setRequestHeader("user-key", "aa3e0b6b7fcfadd761e44c68eee3e3e0");    
+   
 
     xmlhttp.open('GET',url,true);
+
     
     xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
     xmlhttp.setRequestHeader("user-key", "aa3e0b6b7fcfadd761e44c68eee3e3e0");    
