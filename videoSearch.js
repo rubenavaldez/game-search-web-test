@@ -10,7 +10,7 @@ xmlhttp.onload = function () {
   // Request finished. Do processing here.
 };
 
-xmlhttp.send(null);
+xmlhttp.send();
 
 
 
