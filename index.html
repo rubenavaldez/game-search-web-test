@@ -1,32 +1,142 @@
 <!DOCTYPE html>
-
-
-
 <html lang="en">
 
-
-<head><head>
-		<meta http-equiv="Access-Control-Allow-Origin" content="*" />
-	<meta http-equiv="user-key" content="aa3e0b6b7fcfadd761e44c68eee3e3e0" />
-   
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
         integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>;
-    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
- 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
- <script src="videoSearch.js"></script>
+    <script src="assets/javascript/buttons.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="assets/javascript/videoSearch.js"></script>
     <title>Video Search</title>
-</head>
 </head>
 
 <body>
-<button id="search">Search</button>
+<div class="mainShell">
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron mainBox bg-secondary text-white m-3 p-2 col col-lg-12 text-center ">
+                <header>
+                    <h1> Videogame Search Engine</h1>
+                    <h3>Use the drop-down menu choices to get a game recommendation</h3>
+                </header>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card bg-secondary border-danger text-white m-3 p-1 col col-lg-9" id="placeholderForGif">
+                <div class="card-body m-3 p-1">
+                    <p>This is where the console gif should appear.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card bg-secondary border-danger m-3 p-1 col col-lg-10" id="placeholderForDropDownMenu">
+                <div class="card-header text-white"> Here is where the drop down menu buttons will appear</div>
+                <div class="card-body text-white">
+                        <div class="btn-group">
+                                <button id="ageRange" class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    For Age Ranges
+                                </button>
+                                <div class="dropdown-menu">
+                                    <button id="everyone" class="dropdown-item" type="button">Everyone</button>
+                                    <button id="teen" class="dropdown-item" type="button">Teen</button>
+                                    <button id="mature" class="dropdown-item" type="button">Mature</button>
+                                    <button id="adult" class="dropdown-item" type="button">Adult Only</button>
+                                </div>
+                            </div>
+                        
+                            <div class="btn-group">
+                                <button id="platform" class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Platform
+                                </button>
+                                <div class="dropdown-menu">
+                                    <button id="pc" class="dropdown-item" type="button">PC</button>
+                                    <button id="nintendoSwitch" class="dropdown-item" type="button">Nintendo Switch</button>
+                                    <button id="playstation4" class="dropdown-item" type="button">Playstation 4</button>
+                                    <button id="xboxOne" class="dropdown-item" type="button">Xbox One</button>
+                                </div>
+                            </div>
+                        
+                            <div class="btn-group">
+                                <button id="genre" class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Genres
+                                </button>
+                                <div class="dropdown-menu">
+                                    <button id="fighting" class="dropdown-item" type="button">Fighting</button>
+                                    <button id="puzzles" class="dropdown-item" type="button">Puzzles</button>
+                                    <button id="rolePlaying" class="dropdown-item" type="button">Role Playing</button>
+                                    <button id="sport" class="dropdown-item" type="button">Sport</button>
+                                    <button id="adventure" class="dropdown-item" type="button">Adventure</button>
+                                    <button id="arcade" class="dropdown-item" type="button">Arcade</button>
+                                </div>
+                            </div>
+                    <button id="search" class="text-white bg-secondary border-danger m-3 p-1">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="card-deck">
+                <div class="card bg-secondary border-danger text-white m-3 p-1 col col-lg-4">
+                    <div class="card-header" id="videoGameTitle">This is where the search result of the game title
+                        should appear</div>
+                    <div class="card-body" id="videoGameInfo">
+                        This is where our search information should appear including an image of the game itself.
+                        we could also add a button here to search for more info or set that button to the generated
+                        image itself.
+                    </div>
+                </div>
+
+                <div class="card bg-secondary border-danger text-white m-3 p-1 col col-lg-4">
+                    <div class="card-header" id="videoGameTitle">This is where the search result of the game title
+                        should appear</div>
+                    <div class="card-body" id="videoGameInfo">
+                        This is where our search information should appear including an image of the game itself.
+                        we could also add a button here to search for more info or set that button to the generated
+                        image itself.
+                    </div>
+                </div>
+
+                <div class="card bg-secondary border-danger text-white m-3 p-1 col col-lg-4">
+                    <div class="card-header" id="videoGameTitle">This is where the search result of the game title
+                        should appear</div>
+                    <div class="card-body" id="videoGameInfo">
+                        This is where our search information should appear including an image of the game itself.
+                        we could also add a button here to search for more info or set that button to the generated
+                        image itself.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
 </body>
