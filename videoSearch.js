@@ -10,9 +10,9 @@ xmlhttp.onload = function () {
   // Request finished. Do processing here.
 };
 
-xmlhttp.send();
+xmlhttp.send(url);
 
-
+xmlhttp.send("https://rubenavaldez.github.io/game-search-web-test/");
 
 
 
