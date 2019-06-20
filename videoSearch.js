@@ -1,24 +1,3 @@
-var  xmlhttp = new XMLHttpRequest();
-    var url = "https://www.igdb.com/oauth/authorize";
-   
-
-    xmlhttp.open('GET',url,true);
-
-    
-    xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-    xmlhttp.setRequestHeader("user-key", "aa3e0b6b7fcfadd761e44c68eee3e3e0");    
-
-xmlhttp.onload = function () {
-    console.log("success")
-  // Request finished. Do processing here.
-};
-
-xmlhttp.send(url);
-
-
-
-
-
 $(document).ready(function () {
   console.log("ready!");
 
@@ -38,25 +17,19 @@ $(document).ready(function () {
 
 });
 
-var userChoice = "games"
+var userChoice = "portal"
 
 
 $("body").on("click", "#search", function () {
-  console.log("Clicked")
-    
-     xmlhttp.open('GET',url,true);
-    
-    xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-    xmlhttp.setRequestHeader("user-key", "aa3e0b6b7fcfadd761e44c68eee3e3e0");    
-    console.log(xmlhttp)
-    xmlhttp.send();
+  console.log("Click")
 
-
-  axios.get("https://api-endpoint.igdb.com/games/1942?fields=*", {
+  axios.get("https://chicken-coop.p.rapidapi.com/games/" + userChoice + "?platform=pc", {
     headers: {
-      'Access-Control-Allow-Origin': '*',
-      "user-key": "aa3e0b6b7fcfadd761e44c68eee3e3e0",
+      'Access-Control-Allow-Origin': 'https://www.igdb.com/oauth/authorize',
       
+       "X-RapidAPI-Host": "chicken-coop.p.rapidapi.com",
+      "X-RapidAPI-Key": "09840eae9fmsh29e1cf0c587e7d6p114d45jsnfbc066e65e3c",
+
       Accept: "application/json"
       
     }
@@ -70,7 +43,3 @@ $("body").on("click", "#search", function () {
     });
 
 });
-
-
-
-
