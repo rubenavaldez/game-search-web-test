@@ -1,5 +1,5 @@
 var  xmlhttp = new XMLHttpRequest();
-    var url = "https://www.igdb.com/oauth/authorize";
+    var url = "https://api-endpoint.igdb.com/headers/";
     xmlhttp.open('GET',url,true);
     
     xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
@@ -12,7 +12,6 @@ xmlhttp.onload = function () {
 
 xmlhttp.send(url);
 
-xmlhttp.send("https://rubenavaldez.github.io/game-search-web-test/");
 
 
 
