@@ -37,10 +37,10 @@ $("body").on("click", "#search", function () {
         //query: 'mass effect',
         //format: 'jsonp',
         //field_list: 'name'
-    }),
-    .then(response) {
-        console.log(response);
-    }
+    })
+      .then(function(response) {
+      console.log(response)
+    });
 });
-});
+
     
