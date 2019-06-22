@@ -28,15 +28,15 @@ $("body").on("click", "#search", function () {
 
   $.ajax({
     
-    url: "http://www.giantbomb.com/api/game/3030-4725/?api_key=[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]",
-    dataType: "jsonp",
-    jsonp: 'json_callback',
-    data: {
-        api_key: '[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]',
-        User_Agent: "ourtablebootcamp",
+    url: "http://www.giantbomb.com/api/game/3030-4725/?api_key=[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]"
+    //dataType: "jsonp",
+    //jsonp: 'json_callback',
+    //data: {
+        //api_key: '[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]',
+        //User_Agent: "ourtablebootcamp",
         //query: 'mass effect',
-        format: 'jsonp',
-        field_list: 'name'
+        //format: 'jsonp',
+        //field_list: 'name'
     },
     success: function(res) {
         console.log(res);
