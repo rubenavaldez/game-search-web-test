@@ -22,7 +22,7 @@ var platform = "pc"
 var userChoice = "portal";
 // + userChoice + "?platform=" + platform 
 //api_key=[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8
-var apikey = "My key";
+var apikey = "e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8";
 var baseUrl = "http://www.giantbomb.com/api";
 
 // construct the uri with our apikey
@@ -39,7 +39,7 @@ $("body").on("click", "#search", function () {
   $.ajax({
     url: GamesSearchUrl + '&query=' + encodeURI(query),
     dataType: "json",
-    success: searchCallback
+    
   })  
   
 
