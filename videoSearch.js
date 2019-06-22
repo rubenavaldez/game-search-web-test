@@ -27,7 +27,7 @@ $("body").on("click", "#search", function () {
   console.log("Click")
 
   $.ajax({
-    url: "http://api.giantbomb.com/search/",
+    url: "https://api.giantbomb.com/search/",
     dataType: "jsonp",
     jsonp: 'json_callback',
     data: {
