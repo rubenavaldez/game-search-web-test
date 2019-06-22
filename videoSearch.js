@@ -40,7 +40,7 @@ $.ajax ({
     crossDomain: true,
     jsonp: 'json_callback',
     user_agent: 'ourtablebootcamp',
-    url: '  http://api.giantbomb.com/game/1/?api_key=e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8&format=jsonp&json_callback=ourtablebootcamp'
+    url: '  http://api.giantbomb.com/game/3030-4725/?api_key=e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8&format=jsonp&json_callback=ourtablebootcamp'
 }).done(function(response) {
     console.log(response)
     
