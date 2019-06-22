@@ -34,19 +34,16 @@ $("body").on("click", "#search", function () {
   
 
 
-
-  // send off the query
-  $.ajax({
-    url: GamesSearchUrl + '&query=' + encodeURI(query),
-    dataType: "jsonp",
-    
-  })  
-  
-
-  
-      .then(function(response) {
-      console.log(response)
-    });
+$.ajax ({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: 'http://www.giantbomb.com/api/search/?format=jsonp&api_key=[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]&query=batman'
+}).done(function(data) {
+    alert("success:", data);
+}).fail(function() {
+  alert("error");
+}).always(function() {
+  alert("complete");
 });
-
-    
