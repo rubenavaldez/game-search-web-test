@@ -38,8 +38,8 @@ $("body").on("click", "#search", function () {
         //format: 'jsonp',
         //field_list: 'name'
     }),
-    success: function(res) {
-        console.log(res);
+    .then(response) {
+        console.log(response);
     }
 });
 });
