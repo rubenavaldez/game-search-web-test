@@ -45,9 +45,5 @@ $.ajax ({
 }).done(function(response) {
     console.log(response)
     
-}).fail(function() {
-  alert("error");
-}).always(function() {
-  alert("complete");
-});
+
 });
