@@ -38,7 +38,7 @@ $("body").on("click", "#search", function () {
   // send off the query
   $.ajax({
     url: GamesSearchUrl + '&query=' + encodeURI(query),
-    dataType: "json",
+    dataType: "jsonp",
     
   })  
   
