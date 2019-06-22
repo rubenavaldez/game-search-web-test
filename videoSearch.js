@@ -22,24 +22,28 @@ var platform = "pc"
 var userChoice = "portal";
 // + userChoice + "?platform=" + platform 
 //api_key=[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8
+var apikey = "My key";
+var baseUrl = "http://www.giantbomb.com/api";
+
+// construct the uri with our apikey
+var GamesSearchUrl = baseUrl + '/search/?api_key=' + apikey + '&format=json';
+var query = "Batman";
 
 $("body").on("click", "#search", function () {
   console.log("Click")
+  
 
+
+
+  // send off the query
   $.ajax({
-    
-    url: "http://www.giantbomb.com/api/game/3030-4725/?api_key=[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]",
-    method:'get',
-    dataType: 'jsonp',
-    
-    //jsonp: 'json_callback',
-    //data: {
-        //api_key: '[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]',
-        User_Agent: "ourtablebootcamp"
-        //query: 'mass effect',
-        //format: 'jsonp',
-        //field_list: 'name'
-    })
+    url: GamesSearchUrl + '&query=' + encodeURI(query),
+    dataType: "json",
+    success: searchCallback
+  });  
+  
+
+  
       .then(function(response) {
       console.log(response)
     });
