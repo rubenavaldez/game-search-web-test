@@ -40,7 +40,7 @@ $.ajax ({
     crossDomain: true,
     jsonp: 'json_callback',
     user_agent: 'ourtablebootcamp',
-    url: 'http://www.giantbomb.com/api/search/?format=jsonp&api_key=[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]&query=batman'
+    url: ' http://www.giantbomb.com/app/myapp/get-result?regCode=E0A78A&format=json'
 }).done(function(data) {
     alert("success:", data);
 }).fail(function() {
