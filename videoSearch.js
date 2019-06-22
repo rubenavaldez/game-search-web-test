@@ -29,7 +29,8 @@ $("body").on("click", "#search", function () {
   $.ajax({
     
     url: "http://www.giantbomb.com/api/game/3030-4725/?api_key=[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]",
-    method:'get'
+    method:'get',
+    dataType: 'jsonp',
     //dataType: "jsonp",
     //jsonp: 'json_callback',
     //data: {
