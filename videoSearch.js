@@ -37,7 +37,7 @@ $("body").on("click", "#search", function () {
         //query: 'mass effect',
         //format: 'jsonp',
         //field_list: 'name'
-    },
+    }),
     success: function(res) {
         console.log(res);
     }
