@@ -40,7 +40,7 @@ $("body").on("click", "#search", function () {
     url: GamesSearchUrl + '&query=' + encodeURI(query),
     dataType: "json",
     success: searchCallback
-  });  
+  })  
   
 
   
