@@ -39,7 +39,7 @@ $.ajax ({
     dataType: 'jsonp',
     crossDomain: true,
     jsonp: 'json_callback',
-    user_agent: 'ourtablebootcamp'
+    user_agent: 'ourtablebootcamp',
     url: 'http://www.giantbomb.com/api/search/?format=jsonp&api_key=[e7b9ce5f17b926a054c14d54e4e5c5ef2cb2fed8]&query=batman'
 }).done(function(data) {
     alert("success:", data);
